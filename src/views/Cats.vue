@@ -1,42 +1,152 @@
 <template>
     <div class="catsWrapper">
 
-      <b-container fluid class="p-4 bg-dark imageContainer">
-            <b-row>
-              <b-col>
-             <b-img 
-                v-for="(cat, index) in cats" 
-                :key="index"
-                class="portraitImage" 
-                thumbnail 
-                fluid 
-                :src="`${cat.picture}`"
-                alt="Image 1"></b-img>
-            </b-col>
-          </b-row>
-          </b-container>
+      <modal 
+          name="modalZero"
+          :width="750"
+         :height="730"
+         :adaptive="true"
+          >
+           <img :src="`${cats[0].picture}`" />
+        </modal>
+
+         <modal 
+          name="modalOne"
+          :width="730"
+         :height="700"
+         :adaptive="true"
+          >
+           <img :src="`${cats[1].picture}`" />
+        </modal>
+
+         <modal 
+          name="modalTwo"
+          :width="730"
+         :height="720"
+         :adaptive="true"
+          >
+           <img :src="`${cats[2].picture}`" />
+        </modal>
+
+         <modal 
+          name="modalThree"
+          :width="740"
+         :height="730"
+         :adaptive="true"
+          >
+           <img :src="`${cats[3].picture}`" />
+           </modal>
+
+
+
+    <b-container fluid class="p-4 bg-dark imageContainer">
+      <b-row>
+        <b-col>
+        <b-img 
+        @click="showZero()"
+          class="portraitImage" 
+          thumbnail 
+          fluid 
+          :src="`${cats[0].picture}`"
+          alt="Image 1">
+        </b-img>
+
+         <b-img 
+         @click="showOne()"
+          class="portraitImage" 
+          thumbnail 
+          fluid 
+          :src="`${cats[1].picture}`"
+          alt="Image 2">
+        </b-img>
+
+         <b-img 
+         @click="showTwo()"
+          class="portraitImage" 
+          thumbnail 
+          fluid 
+          :src="`${cats[2].picture}`"
+          alt="Image 3">
+        </b-img>
+
+         <b-img 
+         @click="showThree()"
+          class="portraitImage" 
+          thumbnail 
+          fluid 
+          :src="`${cats[3].picture}`"
+          alt="Image 4">
+        </b-img>
+
+         
+          
+      </b-col>
+      
+    </b-row>
+
+    </b-container>
+
 
   </div>
-</template> 
+</template>
 
 <script>
 import { mapState } from 'vuex'
 
-
   export default {
+    methods: {
+    showZero () {
+        this.$modal.show('modalZero'); 
+        },
+    hideZero () {
+      this.$modal.hide('modalZero'); 
+        },
+    showOne () {
+        this.$modal.show('modalOne'); 
+        },
+    hideOne () {
+      this.$modal.hide('modalOne'); 
+        },
+    showTwo () {
+        this.$modal.show('modalTwo'); 
+        },
+    hideTwo () {
+      this.$modal.hide('modalTwo'); 
+        },
+    showThree () {
+        this.$modal.show('modalThree'); 
+        },
+    hideThree () {
+      this.$modal.hide('modalThree'); 
+        },
+    mount () {
+        this.show()
+      },
+    },
     data() {
       return {}
     },
     computed: {
       ...mapState([
         'cats'
-      ]),
+      ])
     }
   }
 </script>
 <style>
+
+.imageContainer {
+  margin-bottom: 20vh;
+}
+
 .catsWrapper {
-  margin: 100px 10vh 30px 10vh;
+    margin: 100px 10vh 30px 10vh;
+}
+
+.portraitImage {
+  width: 35vh;
+  margin: 0 10px 10px 0;
 }
 
 </style>
+

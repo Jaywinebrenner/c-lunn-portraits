@@ -1,6 +1,6 @@
 export default [
   {
-    picture: "https://i.imgur.com/HzuE7CQ.jpg?1",
+    picture: "https://i.imgur.com/mnxc76A.jpg",
     name: "Sheeba",
     breed: "collie",
     gender: "female",

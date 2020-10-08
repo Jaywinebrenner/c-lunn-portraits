@@ -6,6 +6,10 @@ import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 import VueExpandableImage from "vue-expandable-image";
+import vmodal from "vue-js-modal";
+
+
+Vue.use(vmodal);
 Vue.use(VueExpandableImage);
 
 

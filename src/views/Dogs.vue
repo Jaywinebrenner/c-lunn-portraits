@@ -1,21 +1,104 @@
 <template>
     <div class="dogsWrapper">
 
+      <modal 
+          name="modalZero"
+          :width="750"
+         :height="730"
+         :adaptive="true"
+          >
+           <img :src="`${dogs[0].picture}`" />
+        </modal>
+
+         <modal 
+          name="modalOne"
+          :width="730"
+         :height="700"
+         :adaptive="true"
+          >
+           <img :src="`${dogs[1].picture}`" />
+        </modal>
+
+         <modal 
+          name="modalTwo"
+          :width="730"
+         :height="720"
+         :adaptive="true"
+          >
+           <img :src="`${dogs[2].picture}`" />
+        </modal>
+
+         <modal 
+          name="modalThree"
+          :width="750"
+         :height="730"
+         :adaptive="true"
+          >
+           <img :src="`${dogs[3].picture}`" />
+           </modal>
+           <modal 
+          name="modalFour"
+          :width="750"
+         :height="730"
+         :adaptive="true"
+          >
+           <img :src="`${dogs[4].picture}`" />
+        </modal>
+
 
     <b-container fluid class="p-4 bg-dark imageContainer">
       <b-row>
         <b-col>
         <b-img 
-          v-for="(dog, index) in dogs" 
-          :key="index"
+        @click="showZero()"
           class="portraitImage" 
           thumbnail 
           fluid 
-          :src="`${dog.picture}`"
+          :src="`${dogs[0].picture}`"
+          alt="Image 1">
+        </b-img>
 
-          alt="Image 1"></b-img>
+         <b-img 
+         @click="showOne()"
+          class="portraitImage" 
+          thumbnail 
+          fluid 
+          :src="`${dogs[1].picture}`"
+          alt="Image 2">
+        </b-img>
+
+         <b-img 
+         @click="showTwo()"
+          class="portraitImage" 
+          thumbnail 
+          fluid 
+          :src="`${dogs[2].picture}`"
+          alt="Image 3">
+        </b-img>
+
+         <b-img 
+         @click="showThree()"
+          class="portraitImage" 
+          thumbnail 
+          fluid 
+          :src="`${dogs[3].picture}`"
+          alt="Image 4">
+        </b-img>
+
+        <b-img 
+         @click="showFour()"
+          class="portraitImage" 
+          thumbnail 
+          fluid 
+          :src="`${dogs[4].picture}`"
+          alt="Image 5">
+        </b-img>
+         
+          
       </b-col>
+      
     </b-row>
+
     </b-container>
 
 
@@ -26,6 +109,41 @@
 import { mapState } from 'vuex'
 
   export default {
+    methods: {
+    showZero () {
+        this.$modal.show('modalZero'); 
+        },
+    hideZero () {
+      this.$modal.hide('modalZero'); 
+        },
+    showOne () {
+        this.$modal.show('modalOne'); 
+        },
+    hideOne () {
+      this.$modal.hide('modalOne'); 
+        },
+    showTwo () {
+        this.$modal.show('modalTwo'); 
+        },
+    hideTwo () {
+      this.$modal.hide('modalTwo'); 
+        },
+    showThree () {
+        this.$modal.show('modalThree'); 
+        },
+    hideThree () {
+      this.$modal.hide('modalThree'); 
+        },
+    showFour () {
+        this.$modal.show('modalFour'); 
+        },
+    hideFour () {
+      this.$modal.hide('modalFour'); 
+        },
+    mount () {
+        this.show()
+      },
+    },
     data() {
       return {}
     },
@@ -46,4 +164,10 @@ import { mapState } from 'vuex'
     margin: 100px 10vh 30px 10vh;
 }
 
+.portraitImage {
+  width: 35vh;
+  margin: 0 10px 10px 0;
+}
+
 </style>
+

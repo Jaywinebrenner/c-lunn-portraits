@@ -1,17 +1,24 @@
 <template>
-    <div>
-      <h1>Dogs for Adoption</h1>
-    <b-table striped hover :items="dogs">
-      <template v-slot:cell(name)="data">
-        <router-link :to="`/pets/dogs/${data.index}`">{{ data.value }}</router-link>
-      </template>
-
-      <template v-slot:cell(picture)="picture">
-        <b-avatar variant="info" :src="`${picture.value}`" class="mr-3"></b-avatar>
-      </template>
+    <div class="dogsWrapper">
 
 
-    </b-table>
+    <b-container fluid class="p-4 bg-dark imageContainer">
+      <b-row>
+        <b-col>
+        <b-img 
+          v-for="(dog, index) in dogs" 
+          :key="index"
+          class="portraitImage" 
+          thumbnail 
+          fluid 
+          :src="`${dog.picture}`"
+
+          alt="Image 1"></b-img>
+      </b-col>
+    </b-row>
+    </b-container>
+
+
   </div>
 </template>
 
@@ -30,5 +37,13 @@ import { mapState } from 'vuex'
   }
 </script>
 <style>
+
+.imageContainer {
+  margin-bottom: 20vh;
+}
+
+.dogsWrapper {
+    margin: 100px 10vh 30px 10vh;
+}
 
 </style>

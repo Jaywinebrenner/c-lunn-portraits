@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
-    <h1>C. Lunn Portraits</h1>
+    <h1 class="cLunnText">C. Lunn Portraits</h1>
       <router-link to="/">Home</router-link> |
       <router-link to="/Cats">Cats</router-link> |
       <router-link to="/Dogs">Dogs</router-link> |
@@ -23,6 +23,10 @@
   color: #2c3e50;
 }
 
+.cLunnText {
+  font-family: 'Times New Roman', Times, serif;
+}
+
 #nav {
   background-color: white;
   position: fixed;
@@ -31,6 +35,7 @@
   
   width: 100%;
   padding: 10px;
+
   
 
   a {

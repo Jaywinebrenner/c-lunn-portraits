@@ -1,6 +1,6 @@
 <template>
 
-<div class="homeWrapper">
+<div class="container homeWrapper">
   
   
   <p>10"x10" oil based enamel portraits on sanded gesso panels. Dog/cat base price: $2,100. Other animal and human paintings considered case by case.</p>
@@ -32,7 +32,7 @@
     </b-form>
 
     <div class="adminButtonWrapper">
-      <button @click="toggleShowPetForm" class="btn btn-primary">ADMIN- Post New Portrait</button>
+      <!-- <button @click="toggleShowPetForm" class="btn btn-primary">ADMIN- Post New Portrait</button> -->
     </div>
 
 
@@ -73,7 +73,7 @@ h1 {
   margin-bottom: 0px;
 }
 .catPic {
-  width: 70vh;
+  width: 90%;
   /* height: 70vh; */
 }
 
@@ -82,6 +82,7 @@ h1 {
 }
 
 .homeWrapper {
-  margin: 80px 10vh 30px 10vh;
+  /* margin: 80px 10vh 30px 10vh; */
+  margin-top: 6rem;
 }
 </style>
