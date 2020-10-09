@@ -2,41 +2,44 @@
     <div class="catsWrapper">
 
       <modal 
-          name="modalZero"
-          :width="750"
-         :height="730"
+         name="modalZero"
+         :width='"100%"'
+         :height='"80%"'
          :adaptive="true"
+         :class="largeImageWrapper"
           >
-           <img :src="`${cats[0].picture}`" />
+          <img class="largeImage" :src="`${cats[0].picture}`" />
         </modal>
 
          <modal 
           name="modalOne"
-          :width="730"
-         :height="700"
+          :width='"100%"'
+          :height='"80%"'
          :adaptive="true"
+         :class="largeImageWrapper"
           >
-           <img :src="`${cats[1].picture}`" />
+           <img class="largeImage" :src="`${cats[1].picture}`" />
         </modal>
 
          <modal 
           name="modalTwo"
-          :width="730"
-         :height="720"
+          :width='"100%"'
+          :height='"80%"'
          :adaptive="true"
+         :class="largeImageWrapper"
           >
-           <img :src="`${cats[2].picture}`" />
+           <img class="largeImage" :src="`${cats[2].picture}`" />
         </modal>
 
          <modal 
           name="modalThree"
-          :width="740"
-         :height="730"
+          :width='"100%"'
+          :height='"80%"'
          :adaptive="true"
+         :class="largeImageWrapper"
           >
-           <img :src="`${cats[3].picture}`" />
-           </modal>
-
+           <img class="largeImage" :src="`${cats[3].picture}`" />
+        </modal>
 
 
     <b-container fluid class="p-4 bg-dark imageContainer">
@@ -77,7 +80,6 @@
           :src="`${cats[3].picture}`"
           alt="Image 4">
         </b-img>
-
          
           
       </b-col>
@@ -146,6 +148,19 @@ import { mapState } from 'vuex'
 .portraitImage {
   width: 35vh;
   margin: 0 10px 10px 0;
+}
+
+.largeImageWrapper {
+   display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.largeImage {
+  width: 100%;
+ text-align: center;
+
+
 }
 
 </style>

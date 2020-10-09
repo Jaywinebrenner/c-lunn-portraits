@@ -7,6 +7,9 @@ import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 import VueExpandableImage from "vue-expandable-image";
 import vmodal from "vue-js-modal";
+import EnlargeableImage from "@diracleo/vue-enlargeable-image";
+
+Vue.use(EnlargeableImage);
 
 
 Vue.use(vmodal);

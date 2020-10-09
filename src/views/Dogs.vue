@@ -2,47 +2,53 @@
     <div class="dogsWrapper">
 
       <modal 
-          name="modalZero"
-          :width="750"
-         :height="730"
+         name="modalZero"
+         :width='"100%"'
+         :height='"80%"'
          :adaptive="true"
+         :class="largeImageWrapper"
           >
-           <img :src="`${dogs[0].picture}`" />
+          <img class="largeImage" :src="`${dogs[0].picture}`" />
         </modal>
 
          <modal 
           name="modalOne"
-          :width="730"
-         :height="700"
+          :width='"100%"'
+          :height='"80%"'
          :adaptive="true"
+         :class="largeImageWrapper"
           >
-           <img :src="`${dogs[1].picture}`" />
+           <img class="largeImage" :src="`${dogs[1].picture}`" />
         </modal>
 
          <modal 
           name="modalTwo"
-          :width="730"
-         :height="720"
+          :width='"100%"'
+          :height='"80%"'
          :adaptive="true"
+         :class="largeImageWrapper"
           >
-           <img :src="`${dogs[2].picture}`" />
+           <img class="largeImage" :src="`${dogs[2].picture}`" />
         </modal>
 
          <modal 
           name="modalThree"
-          :width="750"
-         :height="730"
+          :width='"100%"'
+          :height='"80%"'
          :adaptive="true"
+         :class="largeImageWrapper"
           >
-           <img :src="`${dogs[3].picture}`" />
-           </modal>
-           <modal 
+           <img class="largeImage" :src="`${dogs[3].picture}`" />
+        </modal>
+
+        <modal 
           name="modalFour"
-          :width="750"
-         :height="730"
+          :width='"100%"'
+          :height='"80%"'
          :adaptive="true"
+         :class="largeImageWrapper"
           >
-           <img :src="`${dogs[4].picture}`" />
+           <img class="largeImage" :src="`${dogs[4].picture}`" />
         </modal>
 
 
@@ -85,14 +91,15 @@
           alt="Image 4">
         </b-img>
 
-        <b-img 
+         <b-img 
          @click="showFour()"
           class="portraitImage" 
           thumbnail 
           fluid 
           :src="`${dogs[4].picture}`"
-          alt="Image 5">
+          alt="Image 4">
         </b-img>
+         
          
           
       </b-col>
@@ -167,6 +174,19 @@ import { mapState } from 'vuex'
 .portraitImage {
   width: 35vh;
   margin: 0 10px 10px 0;
+}
+
+.largeImageWrapper {
+   display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.largeImage {
+  width: 100%;
+ text-align: center;
+
+
 }
 
 </style>

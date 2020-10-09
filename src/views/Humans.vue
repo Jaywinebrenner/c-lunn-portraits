@@ -2,45 +2,52 @@
     <div class="humansWrapper">
 
       <modal 
-          name="modalZero"
-          :width="720"
-         :height="720"
+         name="modalZero"
+         :width='"100%"'
+         :height='"80%"'
          :adaptive="true"
+         :class="largeImageWrapper"
           >
-           <img :src="`${humans[0].picture}`" />
+          <img class="largeImage" :src="`${humans[0].picture}`" />
         </modal>
 
          <modal 
           name="modalOne"
-          :width="720"
-         :height="720"
+          :width='"100%"'
+          :height='"80%"'
          :adaptive="true"
+         :class="largeImageWrapper"
           >
-           <img :src="`${humans[1].picture}`" />
+           <img class="largeImage" :src="`${humans[1].picture}`" />
         </modal>
 
          <modal 
           name="modalTwo"
-          :width="720"
-         :height="720"
+          :width='"100%"'
+          :height='"80%"'
          :adaptive="true"
+         :class="largeImageWrapper"
           >
-           <img :src="`${humans[2].picture}`" />
+           <img class="largeImage" :src="`${humans[2].picture}`" />
         </modal>
 
          <modal 
           name="modalThree"
-          :width="720"
-         :height="720"
+          :width='"100%"'
+          :height='"80%"'
          :adaptive="true"
+         :class="largeImageWrapper"
           >
-           <img :src="`${humans[3].picture}`" />
+           <img class="largeImage" :src="`${humans[3].picture}`" />
         </modal>
 
 
     <b-container fluid class="p-4 bg-dark imageContainer">
       <b-row>
         <b-col>
+
+          <!-- <enlargeable-image src="https://i.imgur.com/9D5uvQM.jpg" src_large="https://i.imgur.com/9D5uvQM.jpg" /> -->
+
         <b-img 
         @click="showZero()"
           class="portraitImage" 
@@ -92,6 +99,7 @@
 import { mapState } from 'vuex'
 
   export default {
+
     methods: {
     showZero () {
         this.$modal.show('modalZero'); 
@@ -144,6 +152,19 @@ import { mapState } from 'vuex'
 .portraitImage {
   width: 35vh;
   margin: 0 10px 10px 0;
+}
+
+.largeImageWrapper {
+   display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.largeImage {
+  width: 100%;
+ text-align: center;
+
+
 }
 
 </style>
